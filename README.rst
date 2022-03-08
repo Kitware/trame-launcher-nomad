@@ -24,12 +24,11 @@ Usage demonstrator
 For this example we suppose that Nomad and Consul are running.
 
 .. code-block::
-   :caption: Register Load balancer, trame application template and launcher within Nomad cluster
 
-        cd ./nomad/jobs
-        nomad job run fabio.nomad
-        nomad job run trame-demo.nomad
-        nomad job run trame-launcher.nomad
+      cd ./nomad/jobs
+      nomad job run fabio.nomad
+      nomad job run trame-demo.nomad
+      nomad job run trame-launcher.nomad
 
 
 Then you should be able to connect to `http://localhost:9999/index.html`
