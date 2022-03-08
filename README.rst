@@ -16,3 +16,26 @@ License
 --------
 
 **trame-launcher-nomad** is distributed under the OSI-approved BSD 3-clause License.
+
+
+Usage demonstrator
+-------------------
+
+For this example we suppose that Nomad and Consul are running.
+
+```
+cd ./nomad/jobs
+nomad job run fabio.nomad
+nomad job run trame-demo.nomad
+nomad job run trame-launcher.nomad
+```
+
+Then you should be able to connect to `http://localhost:9999/index.html`
+
+You should see a rudimentary form that let you dispatch a new job by its name.
+Once submited, the page should redirect to connect you directly to the demo trame application.
+
+The `trame-launcher-nomad` provide a `POST /launcher` endpoint that has the responsibilty to
+dispatch a new job and provide informations on how to connect back to that running service.
+
+The website is just issuing a POST request and if a redirect url is provided switch back to it.
